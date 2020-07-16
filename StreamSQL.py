@@ -10,11 +10,11 @@ import subprocess
 #importing file which sets env variable
 subprocess.call("./settings.sh", shell = True)
 
-consumer_key = os.environ['CONSUMER_KEY']
-consumer_secret = os.environ['CONSUMER_SECRET']
-access_token = os.environ['ACCESS_TOKEN']
-access_token_secret = os.environ['ACCESS_TOKEN_SECRET']
-password = os.environ['PASSWORD']
+consumer_key = 'Hfp7ugGmFV5oF2e1X8VFOWIzJ'#os.environ['CONSUMER_KEY']
+consumer_secret = '8L8e50ziliYl3nOMNr2uHkmjbJcpIrv7tKljoF80jYfRqXvIGV'#os.environ['CONSUMER_SECRET']
+access_token = '1259984132723085318-6cWBUp2ynO9ikA8xOhCttOIRvBPMWr'#os.environ['ACCESS_TOKEN']
+access_token_secret ='hapSNwMUcxlTV2lHcNwo98xfqvjqk1VMNGO5GyYCyGT4P' #os.environ['ACCESS_TOKEN_SECRET']
+password ='yelirw18' #os.environ['PASSWORD']
 
 
 
@@ -24,7 +24,7 @@ def connect(username, created_at, tweet, retweet_count, place, location):
     connect to MySQL database and insert twitter data
     """
     try:
-        con = mysql.connector.connect(host = 'localhost',database='twitterDB',user='root',password=password,charset='utf8')
+        con = mysql.connector.connect(host = 'localhost',database='twitterDB',user='root',auth_plugin='mysql_native_password',password=password,charset='utf8')
 
         if con.is_connected():
             """
